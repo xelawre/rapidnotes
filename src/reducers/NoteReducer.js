@@ -20,11 +20,12 @@ export const NoteReducer = (state, action) => {
             }
         
         case 'UPDATE_NOTE':
+                const tempNotes = state.notes.filter(n => n.id !== action.id);
+                tempNotes.unshift({title: action.title, text: action.text, id: action.id})
                 return {
                     ...state,
-                    notes: state.notes.map(note => note.id === action.id ? {title: action.title, text: action.text, id: action.id} : note)
+                    notes: tempNotes
                 }
-
         case 'ACTIVE_NOTE': 
                 return {
                     ...state,

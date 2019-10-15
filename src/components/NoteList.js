@@ -6,9 +6,9 @@ import MyIcon from './MyIcon';
 
 const NoteList = () => {
     const { dispatch, state } = useContext(NoteContext);
+    console.log(state.notes);
 
     const filteredNotes = state.notes.filter(note => note.title.toLowerCase().includes(state.searchFilter.toLowerCase()));
-
     const addNote = () => {
         if(state.notes[0].title.length > 1 && state.notes[0].title.length > 1) {
             dispatch({type: 'ADD_NOTE', title: '', text: ''});

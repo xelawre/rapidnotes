@@ -81,6 +81,8 @@ body {
   .expanded-note { 
     width: 60%;
     padding: 3em;
+    animation: note .4s; 
+
 
     .note-wrapper {
       width: 100%;

@@ -23,10 +23,9 @@ const ExpandedNote = ({note}) => {
         <div className="expanded-note">
             <div className="note-wrapper">
                 <div className="note-title">           
-                    <input maxlength="50" autoComplete="off" className="input title" name="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)}/> 
+                    <input maxLength="50" autoComplete="off" className="input title" name="title" type="text" value={title} onChange={(e) => setTitle(e.target.value)}/> 
                 </div>
-                <textarea autoComplete="off" className="input textarea" name="text" rows="15" type="text" value={text} onChange={(e) => setText(e.target.value)}/> 
-                <button className="save" onClick={() => save()}><MyIcon icon="fa fa-save"/></button>
+                <textarea onKeyUp={save} autoComplete="off" className="input textarea" name="text" rows="15" type="text" value={text} onChange={(e) => setText(e.target.value)}/> 
             </div>
         </div>
     );
