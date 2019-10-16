@@ -37,6 +37,12 @@ export const NoteReducer = (state, action) => {
                 ...state,
                 searchFilter: action.search,
             }
+
+        case 'SET_MODE': 
+        return {
+            ...state,
+            darkMode: action.darkMode,
+        }
         default:
             return state
     }

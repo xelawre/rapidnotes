@@ -6,7 +6,6 @@ import MyIcon from './MyIcon';
 
 const NoteList = () => {
     const { dispatch, state } = useContext(NoteContext);
-    console.log(state.notes);
 
     const filteredNotes = state.notes.filter(note => note.title.toLowerCase().includes(state.searchFilter.toLowerCase()));
     const addNote = () => {
@@ -26,9 +25,10 @@ const NoteList = () => {
                  return <NoteDetails note={note} key={note.id} />
               })}
             </ul>
+            <div className="note-list-fade"></div>
         </div>
     ) : (
-        <div className="empty">No notes to read</div>
+        <div className="empty">Empty notes</div>
     )
 };
 

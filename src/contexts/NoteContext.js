@@ -7,20 +7,22 @@ export const NoteContext = createContext();
         notes: [],
         searchFilter: '',
         activeNote: null,
-        loading: false,
+        checkNote: false,
+        darkMode: true
     }
     
     const NoteContextProvider = (props) => {
 
     const [state, dispatch] = useReducer( NoteReducer, initialState, () => {
-        const localData = localStorage.getItem('notes');
-        if(localData) {
-            initialState.notes = JSON.parse(localData)
+
+        const localNotes = localStorage.getItem('notes');
+
+        if(localNotes) {
+            initialState.notes = JSON.parse(localNotes)
             return initialState
         } else {
             return initialState
         } 
-        
     });
     
     useEffect (() => {

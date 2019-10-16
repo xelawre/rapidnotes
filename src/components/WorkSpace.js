@@ -9,7 +9,7 @@ const Workspace = () => {
     const { state } = useContext(NoteContext);
     
     return (
-        <div className="work-space">
+        <div className={ state.darkMode ? "work-space" : "work-space work-space-ligth"}>
             <NoteList/>
             {state.activeNote ?  <ExpandedNote note={state.activeNote}/> : null}
            
